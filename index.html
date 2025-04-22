@@ -9,68 +9,20 @@
  
 </head>
 <body>
-<!-- 먼저 큰 틀 잡기
-    1. 투두리스트 스타일 및 입력창 & 버튼 만들기
--->
-<div class="container">
-
-
-<h1>Todo List</h1>
-
-<!-- 날씨 및 데일리& 전체 삭제 버튼 -->
-<div id="now-date"></div>
-<section class="todo-bars ">
-    <div class="daily-make">
-        <div><i class="fa-solid fa-heart"></i></div>&nbsp;
-        <div>Daily</div>
-        <div><button id="daily-btn"><i class="fa-solid fa-plus" ></i></button></div>
-    </div>
-
-    <div class="dots">
-        <div ><i class="fa-solid fa-ellipsis list-area"></i>
-        </div>
-        <div id="btn-area" class="all-button">
-            <p class="inventory">목록</p>
-            <div id="all-check">전체 선택</div>
-            <div id="all-del">전체 지우기</div>
-        </div>
-    </div>
-</section>
-
-
-<section class="todo-contents">
-    <div id="todo-views">
-       
-    </div>
-
-
-    <div class="input-none" >
-        <div class=" todo-inputs todo-input-value" id="tasks">
-                   <button class="circle"></button> 
-                <input type="text" id="input-value" placeholder="내용을 입력하세요.">
-              <button id="plus-btn"><i class="fa-solid fa-arrow-up"></i></button>
-          
-        </div>
-    </div>
+    <div class="container">
+        <h1>Todo List</h1>
+        <div class="date-view"></div>
     
-    <div class="todo-bottom">
-    
-        <span class="todo-rest">0 &nbsp thing&nbsp left</span>
-            <div id="all">ALL</div>
-            <div id="todo">To&nbsp do </div>
-            <div id="finish">Finish</div>
-      
-      
-      
+        
+        <section>
+            <div class="daily-button">
+               
+                <div><i class="fa-solid fa-heart"></i> Daily </div>
+                <div><button id="plus-btn"><i class="fa-solid fa-plus" onclick="openInputBox()"></i></button></div>
+            </div>
+        </section>
 
     </div>
-   
-</section>
-
-</div>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="main.js"></script>
