@@ -14,14 +14,32 @@
         <div class="date-view"></div>
     
         
-        <section>
+        <section class="bar">
+            <!-- 데일리버튼 -->
             <div class="daily-button">
-               
                 <div><i class="fa-solid fa-heart"></i> Daily </div>
                 <div><button id="plus-btn"><i class="fa-solid fa-plus" onclick="openInputBox()"></i></button></div>
             </div>
+            <!-- 목록버튼 -->
+            <div class="dots">
+                <div ><i class="fa-solid fa-ellipsis list-area" onclick="openInAll()"></i>
+                </div>
+               <div id="btn-area" class="all-button">
+                    <p class="inventory">목록</p>
+                    <div id="all-check">전체 선택</div>
+                    <div id="all-del">전체 지우기</div>
+                </div>
+            </div>
         </section>
-
+        <div class="input-none">
+            <div id="tasks">
+                <button class="circle"></button> 
+             <input type="text" id="input-value" placeholder="내용을 입력하세요.">
+           <button id="plus-btn"><i class="fa-solid fa-arrow-up"></i></button>
+       
+     </div>
+        </div>
+     
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

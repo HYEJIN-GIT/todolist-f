@@ -13,3 +13,18 @@ const dateRender = () =>{
 }
 
 dateRender();
+
+//데일리 버튼 누르면 input 박스 보이게 하기
+
+const openInputBox = () =>{
+    let inputArea = document.querySelector(".input-none");
+    inputArea.style.display = (inputArea.style.display === "inline") ? "none" : "inline";
+  
+}
+
+//목록 버튼 누르면 선택,삭제 목록 나오게 하기
+const openInAll = () =>{
+    let inventoryArea = document.getElementById("btn-area");
+    inventoryArea.style.display = (inventoryArea.style.display === "inline") ? "none" : "inline";
+  
+}
