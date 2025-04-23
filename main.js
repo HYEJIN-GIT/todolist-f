@@ -33,8 +33,22 @@ const openInAll = () =>{
 
 let inputContent = document.getElementById('input-value')
 let submitBtn = document.getElementById('submit-btn')
-let tasksList = []
+let taskList = []
 submitBtn.addEventListener('click',submit)
+
+
+inputContent.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      if (inputContent.value === "") {
+        alert('내용을 입력하세요');
+        return;
+      }
+      submit(event);
+      inputContent.value = "";
+    }
+  });
+  
+
 
 function submit(){
 
@@ -46,8 +60,8 @@ function submit(){
         isEditing: false
     }
 
-    tasksList.push(task)
-    console.log(tasksList)
+    taskList.push(task)
+    console.log(taskList)
     todoRender()
 
 }
@@ -55,10 +69,14 @@ function submit(){
 
 const todoRender = () => {
 
-    let todoHTML = tasksList.map((task)=>`
+    let todoHTML = taskList.map((task)=>`
     <div id = "tasks">
-    <div>
-    ${task.taskValue}
+    <div class = "${task.isComplete ? "check-todo":task.taskValue }">
+    <button class="circle" onclick="checkBtn('${task.id}')">
+          ${task.isComplete ? '<div class="complete"></div>' : ""}
+    </button>
+    
+        ${task.taskValue}
     
     </div>
  
@@ -74,6 +92,17 @@ const todoRender = () => {
 todoRender()
 
 
+
+
+const checkBtn = (id) => {
+   taskList.forEach(task => {
+      if (task.id === id) {
+        task.isComplete = !task.isComplete;
+      }
+    });
+    todoRender();
+  };
+  
 
 
 // 랜덤아이디 만들어주기
