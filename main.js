@@ -1,7 +1,7 @@
 // 날짜데이터 함수 넣기
 
 const dateRender = () =>{
-     now = new Date()
+     let now = new Date()
     let dateList = {
         day: now.getDate(),
         month: now.getMonth()+1,
@@ -28,3 +28,57 @@ const openInAll = () =>{
     inventoryArea.style.display = (inventoryArea.style.display === "inline") ? "none" : "inline";
   
 }
+
+// input 내용 화면에 표시하기
+
+let inputContent = document.getElementById('input-value')
+let submitBtn = document.getElementById('submit-btn')
+let tasksList = []
+submitBtn.addEventListener('click',submit)
+
+function submit(){
+
+
+    let task = {
+        id:randomIDGenerate(),
+        taskValue : inputContent.value,
+        isComplete:false,
+        isEditing: false
+    }
+
+    tasksList.push(task)
+    console.log(tasksList)
+    todoRender()
+
+}
+
+
+const todoRender = () => {
+
+    let todoHTML = tasksList.map((task)=>`
+    <div id = "tasks">
+    <div>
+    ${task.taskValue}
+    
+    </div>
+ 
+    </div>
+   
+    
+    `).join("")
+
+    document.querySelector(".todo-views").innerHTML = todoHTML;
+
+
+}
+todoRender()
+
+
+
+
+// 랜덤아이디 만들어주기
+function randomIDGenerate() {
+    return '_' + Math.random().toString(36).substr(2, 9);
+  }
+  
+

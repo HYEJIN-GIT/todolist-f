@@ -103,34 +103,47 @@ h1{
 
 .all-button{
     display: none;
-    background-color: white;
     border-radius: 10px;
-    font-family: 'MangoDdobak-B\(ttf\).ttf';
+    padding: 2px;
+    background-color: rgb(241, 241, 241);
+    width: 80px;
+    position: fixed;
+    margin-top: 40px;
+    margin-left: 20px;
   
 }
 .inventory{
-  
+    padding-top: 2px;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgb(200, 197, 197);
+    margin: 0px;
     color: black;
-    font-size: 11px;
-    position: relative;
-    top: 2px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid rgb(186, 181, 181);
+    font-family: 'MangoByeolbyeol.otf';
 }
-#all-check{
-  
-    position: relative;
-    right: 15px;
-    color: rgb(20, 19, 19);
-    font-size: 11px;
-    margin-bottom: 3px;
 
+
+
+
+.all-button div{
+    font-family: 'MangoDdobak-B\(ttf\).ttf';
+    cursor: pointer;
+    font-size: 12px;
+    padding-top: 2px;
+    height: 20px;
+    width:  100%;
+    color: rgb(103, 99, 99);
+    border-radius: 4px;
+    box-sizing: border-box;
+   
 }
-#all-del{
-    position: relative;
-    right: 10px;
-    color: rgb(20, 19, 19);
-    font-size: 11px;
+.all-button div:hover{
+    background-color: rgb(194, 194, 194);
+    color: black;
+}
+.all-button div:active{
+    background-color:  rgb(172, 172, 172);
+    color: black;
     
 }
 /* input 창 */
@@ -169,3 +182,9 @@ h1{
     position: relative;
 }
 
+#submit-btn{
+    border: none;
+    background-color: rgb(210, 225, 243);
+    border-radius: 20px;
+    margin-left: 10px;
+}
