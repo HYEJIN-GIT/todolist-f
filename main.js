@@ -67,6 +67,29 @@ function submit(){
 }
 
 
+
+
+// 외부 클릭 시 목록 버튼 숨기기
+let buttonArea = document.getElementById("btn-area")
+document.addEventListener('mouseup', function (e) {
+  const container = document.querySelector('.container');
+  if (!container.contains(e.target)) {
+    buttonArea.style.display = 'none';
+  }
+});
+
+
+
+// 외부 클릭 시 input 버튼 숨기기
+
+document.addEventListener('mouseup', function (e) {
+  const inputArea = document.querySelector(".input-none");
+  if (!document.querySelector('.container').contains(e.target)) {
+    inputArea.style.display = 'none';
+  }
+ 
+});
+
 const todoRender = () => {
 
     let todoHTML = taskList.map((task)=>`
