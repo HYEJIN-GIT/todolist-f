@@ -28,9 +28,8 @@ body{
 
 .container{
    
-    height: 100vh;
-    text-align: center;
-    
+   
+    border: 1px solid red;
  
 }
 /* 제목 */

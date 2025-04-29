@@ -35,6 +35,7 @@ let inputContent = document.getElementById('input-value')
 let submitBtn = document.getElementById('submit-btn')
 let taskList = []
 submitBtn.addEventListener('click',submit)
+inputContent.addEventListener("focus",()=>{  inputContent.value = "";})
 
 
 inputContent.addEventListener("keydown", function (event) {
@@ -59,10 +60,10 @@ function submit(){
         isComplete:false,
         isEditing: false
     }
-
+    inputContent.value = "";
     taskList.push(task)
     console.log(taskList)
-    todoRender()
+
 
 }
 
@@ -90,42 +91,9 @@ document.addEventListener('mouseup', function (e) {
  
 });
 
-const todoRender = () => {
-
-    let todoHTML = taskList.map((task)=>`
-    <div id = "tasks">
-    <div class = "${task.isComplete ? "check-todo":task.taskValue }">
-    <button class="circle" onclick="checkBtn('${task.id}')">
-          ${task.isComplete ? '<div class="complete"></div>' : ""}
-    </button>
-    
-        ${task.taskValue}
-    
-    </div>
- 
-    </div>
-   
-    
-    `).join("")
-
-    document.querySelector(".todo-views").innerHTML = todoHTML;
-
-
-}
-todoRender()
 
 
 
-
-const checkBtn = (id) => {
-   taskList.forEach(task => {
-      if (task.id === id) {
-        task.isComplete = !task.isComplete;
-      }
-    });
-    todoRender();
-  };
-  
 
 
 // 랜덤아이디 만들어주기
