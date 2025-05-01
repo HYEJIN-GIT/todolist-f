@@ -28,8 +28,6 @@ body{
 
 .container{
    
-   border: 1px solid red;
-    
  
 }
 
@@ -96,6 +94,60 @@ margin-top: 40px;
 }
 #daily-btn:active{
     background-color: rgb(159, 191, 217);
-  
    
+}
+
+/* 목록 */
+
+.fa-ellipsis{
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+.all-button{
+    display: none;
+    border: none;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: rgb(241, 241, 241);
+    width: 80px;
+    position: fixed;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.inventory{
+    font-size: 13px;
+    text-align: center;
+    border-bottom: 1px solid rgb(200, 197, 197);
+    margin: 0px;
+    color: black;
+    font-family: 'MangoByeolbyeol.otf';
+}
+
+
+.all-button div{
+    
+    font-family: 'MangoDdobak-B\(ttf\).ttf';
+    cursor: pointer;
+    font-size: 12px;
+    padding-left: 2px;
+    padding-top: 5px;
+    height: 25px;
+    width: 100%;
+    color: rgb(103, 99, 99);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.all-button div:hover{
+    background-color: rgb(231, 240, 247);
+    color: black;
+}
+
+.all-button div:active{
+    background-color: rgb(205, 227, 244);
+    color: black;
+    
 }
