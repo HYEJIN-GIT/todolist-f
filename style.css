@@ -28,7 +28,7 @@ body{
 
 .container{
    
-   
+   border: 1px solid red;
     
  
 }
@@ -45,4 +45,57 @@ h1{
     font-size: 12px;
     display: flex;
     justify-content: end;
+}
+
+/* daily & dot flex */
+
+#bar{
+  
+
+margin-top: 40px;
+ display: flex;
+ justify-content: space-between;
+}
+
+/* daily */
+
+.daily-make{
+    display: flex;
+    margin-left: 50px;
+    font-size: 15px;
+    background-color: rgb(235, 235, 235);
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+ 
+}
+
+#daily-btn{
+
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    color: rgb(106, 128, 179);
+    border: none;
+    background-color: rgb(191, 218, 241);
+}
+
+.fa-plus{
+    position: relative;
+    top: 3px;
+}
+
+#daily-btn:hover{
+    background-color: rgb(216, 234, 249);
+    box-shadow: 1px 1px gray;
+   
+}
+#daily-btn:active{
+    background-color: rgb(159, 191, 217);
+  
+   
 }
