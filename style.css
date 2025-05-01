@@ -87,9 +87,10 @@ margin-top: 40px;
     top: 3px;
 }
 
+
+
 #daily-btn:hover{
-    background-color: rgb(216, 234, 249);
-    box-shadow: 1px 1px gray;
+    background-color: rgb(190, 213, 230);
    
 }
 #daily-btn:active{
@@ -106,6 +107,14 @@ margin-top: 40px;
     margin-right: 40px;
 }
 
+
+.fa-ellipsis:hover{
+    color:rgb(120, 142, 193);
+}
+
+.fa-ellipsis:active{
+    color:rgb(96, 115, 158);
+}
 .all-button{
     display: none;
     border: none;

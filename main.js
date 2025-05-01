@@ -17,3 +17,16 @@ const dateRender = () =>{
 }
 
 dateRender()
+
+//목록 버튼 보이게 하기
+let buttonArea = document.getElementById("btn-area")
+
+const openInAll = () =>{
+ 
+  
+  if (buttonArea.style.display === "block") {
+    buttonArea.style.display = "none";
+  } else {
+    buttonArea.style.display = "block";
+  }
+}
