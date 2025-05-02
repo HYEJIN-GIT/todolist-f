@@ -31,13 +31,68 @@ const openInAll = () =>{
   }
 }
 
-//input 버튼 보여주기
+//daily 버튼 보여주기
 let taskView = document.getElementById('input-none')
 const openInput = ()=>{
-  if (taskView.style.display === "block") {
+  if (taskView.style.display === "inline") {
     taskView.style.display = "none";
   } else {
-    taskView.style.display = "block";
+    taskView.style.display = "inline";
   }
 }
+
+//input에 있는 내용 화면에 보여주기
+let InputValue = document.getElementById('input-value');
+let submitBtn = document.getElementById('plus-btn')
+let taskList = []
+
+submitBtn.addEventListener('click',submitContents)
+
+function submitContents(){
+
+  let tasks = {
+
+      randomId : randomIDGenerate(),
+      taskContents: InputValue.value,
+      isComplete: false,
+      isEditing: false
+  }
+  taskList.push(tasks)
+  console.log(taskList)
+  resultRender()
+}
+
+const  resultRender = () =>{
+  let todoHTML = taskList.map((task)=>`
+  
+  
+  
+  <div id="inputs">
+
+  <div class = "check-todo">
+    <button class="circle">
+        </button>
+         ${task.taskContents}
+  </div>
+ 
+</div>
+
+
+
+
+  
+   
+  `).join("");
+
+  document.getElementById("todolist-views").innerHTML = todoHTML;
+}
+
+
+
+
+// ID 생성 함수
+function randomIDGenerate() {
+  return '_' + Math.random().toString(36).substr(2, 9);
+}
+
 
