@@ -160,3 +160,72 @@ margin-top: 40px;
     color: black;
     
 }
+
+
+/*input-box& button 정렬 및 꾸미기*/
+.todo-input-value{
+    display: flex;
+    margin:10px 50px;
+   
+}
+
+
+
+#input-value{
+    background-color: rgb(206, 223, 237);
+ border: none;
+ border-bottom: solid 1px gray;
+ width: 100%;
+ text-align: center;
+font-family: 'PyeongChang-Regular.otf';
+font-size: 14px;
+}
+
+.fa-arrow-up{
+    position: relative;
+    top: 3px;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+
+
+/* 버튼이벤트 */
+#input-none{
+    display: none;
+}
+#plus-btn{
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    position: relative;
+    bottom: 2px;
+    color: rgb(103, 99, 99);
+    position: relative;
+    left: 2px;
+    background-color: rgb(227, 226, 226);}
+
+#plus-btn:hover{
+    color: gray;
+}
+
+#plus-btn:active
+{
+  color: black;
+}
+
+/* todo 체크 원 만들기 */
+.circle{
+    min-width: none;
+    min-height: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    position: relative;
+}

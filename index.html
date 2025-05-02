@@ -23,7 +23,7 @@
             <div class="daily-make">
                 <div><i class="fa-solid fa-heart"></i></div>&nbsp;
                 <div>Daily</div>
-                <div><button id="daily-btn"><i class="fa-solid fa-plus"></i></button></div>
+                <div><button id="daily-btn"><i class="fa-solid fa-plus "  onclick="openInput()"></i></button></div>
             </div>
 
             <div class="dots">
@@ -39,13 +39,19 @@
 
 </section>
 
-
-
-
-
     <section>
+        <div id="todolist-views">
 
+        </div>
 
+        <div id="input-none" >
+            <div class=" todo-input-value" id="inputs">
+                       <button class="circle"></button> 
+                    <input type="text" id="input-value" placeholder="내용을 입력하세요.">
+                  <button id="plus-btn"><i class="fa-solid fa-arrow-up"></i></button>
+              
+            </div>
+        </div>
     </section>
 
         </div>

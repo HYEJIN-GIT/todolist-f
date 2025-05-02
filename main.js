@@ -30,3 +30,14 @@ const openInAll = () =>{
     buttonArea.style.display = "block";
   }
 }
+
+//input 버튼 보여주기
+let taskView = document.getElementById('input-none')
+const openInput = ()=>{
+  if (taskView.style.display === "block") {
+    taskView.style.display = "none";
+  } else {
+    taskView.style.display = "block";
+  }
+}
+
