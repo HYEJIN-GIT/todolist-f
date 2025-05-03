@@ -230,23 +230,8 @@ margin-top: 40px;
     position: relative;
 }
 
-/* todo 체크 실행 시 원 넣기 */
-.complete{
-    min-width: none;
-    min-height: none;
-    width:10px;
-    height: 10px;
-    margin: 0.5rem 0.5rem;
-    border-radius: 50px;
-    border: 1px solid lightgray;
-    cursor: pointer;
-    text-align: center;
-    background-color: gray;
-    position: relative;
-    right: 10px;
-    bottom: 5px;
-  }
-  
+
+
 
 /* todo 보여주기 */
 
@@ -266,9 +251,3 @@ margin-top: 40px;
     display: flex;
 }
 
-/* 할일 완료시 체크 */
-.check-line{
-    text-decoration: line-through;
-    font-style: italic;
-    color: lightgrey;
-}

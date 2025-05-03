@@ -45,7 +45,19 @@ const openInput = ()=>{
 let InputValue = document.getElementById('input-value');
 let submitBtn = document.getElementById('plus-btn')
 let taskList = []
+//enter시 할일 표시
+InputValue.addEventListener('keydown',function(event){
+  if(event.keyCode === 13)
+  { 
+    if(InputValue.value =="")
+      {alert('내용을 입력하세요')
+        return
+      }
+      submitContents(event)
+      InputValue.value = ""
+    }})
 
+//버튼 누를 시 할일 표시
 submitBtn.addEventListener('click',submitContents)
 
 function submitContents(){
