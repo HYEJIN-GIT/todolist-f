@@ -244,10 +244,38 @@ margin-top: 40px;
     border-bottom: 1px solid rgb(169, 165, 165);  
 }
 
+/* 완료시 줄긋기 */
 
-
-
-.check-todo{
-    display: flex;
+.check-line{
+    text-decoration: line-through;
 }
+/* 완료버튼 */
+.complete{
+    min-width: none;
+    min-height: none;
+    width:10px;
+    height: 10px;
+    margin: 0.5rem 0.5rem;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    text-align: center;
+    background-color: gray;
+    position: relative;
+    right: 10px;
+    bottom: 5px;
+  }
 
+
+  /* update  버튼 */
+
+  .update-btn{
+    background-color: rgb(206, 223, 237);
+    border: none;
+
+  }
+  /* delete  버튼 */
+  .cancel-btn{
+    background-color: rgb(206, 223, 237);
+    border: none;
+  }

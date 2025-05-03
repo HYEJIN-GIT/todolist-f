@@ -81,10 +81,21 @@ const  resultRender = () =>{
   
   <div id="inputs">
 
-  <div class = "check-todo">
-    <button class="circle">
+  <div class = "check-todo  ${task.isComplete ? "check-line" : ""}"">
+  <button class="circle" onclick = "checkBtn('${task.randomId}')">
+     ${task.isComplete ? '<div class="complete"></div>' : ""}
         </button>
          ${task.taskContents}
+        
+</div>
+
+    <div>
+         <button class = "update-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button class="cancel-btn">
+          <i class="fa-solid fa-x"></i>
+        </button>
+        </div>
+         
   </div>
  
 </div>
@@ -99,7 +110,18 @@ const  resultRender = () =>{
   document.getElementById("todolist-views").innerHTML = todoHTML;
 }
 
+//할일 체크
 
+
+const checkBtn= (randomId) =>{
+taskList.forEach(task =>{
+if(task.randomId === randomId){
+  task.isComplete = !task.isComplete
+}
+
+})
+resultRender()
+}
 
 
 // ID 생성 함수
