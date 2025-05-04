@@ -91,7 +91,7 @@ const  resultRender = () =>{
 
     <div>
          <button class = "update-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-          <button class="cancel-btn">
+          <button class="cancel-btn" onclick = "deleteBtn('${task.randomId}')">
           <i class="fa-solid fa-x"></i>
         </button>
         </div>
@@ -121,9 +121,23 @@ document.addEventListener('mouseup', function(e) {
   }
 });
 
-//할일 체크
 
-const checkBtn= (randomId) =>{
+//외부 클릭 시 창 닫기(daily)
+
+document.addEventListener('mouseup', function(e) {
+  const container = document.querySelector('.container');
+
+  if (!container.contains(e.target)) {
+    taskView.style.display = 'none';
+  }
+});
+
+
+
+
+//할일 체크 버튼
+
+const checkBtn = (randomId) =>{
 taskList.forEach(task =>{
 if(task.randomId === randomId){
   task.isComplete = !task.isComplete
@@ -132,6 +146,36 @@ if(task.randomId === randomId){
 })
 resultRender()
 }
+
+
+//삭제 버튼
+
+const deleteBtn = (randomId) =>{
+taskList = taskList.filter(task => task.randomId !== randomId)
+resultRender()
+
+}
+
+//전체 삭제 버튼
+
+document.getElementById('all-del').addEventListener("click",()=>{
+
+alert('정말 삭제하시겠습니까?')
+taskList = [];
+resultRender();
+buttonArea.style.display = "none";
+
+})
+
+//전체 선택버튼
+
+document.getElementById('all-check').addEventListener('click',()=>{
+
+taskList.forEach(task => checkBtn(task.randomId))
+buttonArea.style.display = "none";
+
+})
+
 
 
 // ID 생성 함수
