@@ -110,8 +110,18 @@ const  resultRender = () =>{
   document.getElementById("todolist-views").innerHTML = todoHTML;
 }
 
-//할일 체크
 
+//외부 클릭 시 창 닫기 (목록)
+
+document.addEventListener('mouseup', function(e) {
+  const container = document.querySelector('.container');
+
+  if (!container.contains(e.target)) {
+    buttonArea.style.display = 'none';
+  }
+});
+
+//할일 체크
 
 const checkBtn= (randomId) =>{
 taskList.forEach(task =>{
