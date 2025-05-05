@@ -279,3 +279,11 @@ margin-top: 40px;
     background-color: rgb(206, 223, 237);
     border: none;
   }
+
+  /* 남은 할일 보여주기 */
+  .todo-bottom{
+    display: flex;
+justify-content: center;
+font-size: 12px;
+margin-top: 50px;
+  }

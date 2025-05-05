@@ -108,6 +108,8 @@ const  resultRender = () =>{
   `).join("");
 
   document.getElementById("todolist-views").innerHTML = todoHTML;
+  restSet()
+
 }
 
 
@@ -184,3 +186,9 @@ function randomIDGenerate() {
 }
 
 
+//남은 할일 보여주기
+
+const restSet = () => {
+  const left = taskList.filter(task => !task.isComplete).length;
+  document.querySelector('.todo-rest').innerHTML = `${left} thing left`;
+}
