@@ -266,6 +266,11 @@ margin-top: 40px;
     bottom: 5px;
   }
 
+  .check-todo{
+    display: flex;
+    
+}
+
 
   /* update  버튼 */
 
@@ -287,3 +292,14 @@ justify-content: center;
 font-size: 12px;
 margin-top: 50px;
   }
+
+  /* update 버튼 */
+
+
+
+.update-btn:hover{
+    color: gray;
+}
+.update-btn:active{
+    color:black
+}

@@ -85,23 +85,26 @@ const  resultRender = () =>{
   <button class="circle" onclick = "checkBtn('${task.randomId}')">
      ${task.isComplete ? '<div class="complete"></div>' : ""}
         </button>
-         ${task.taskContents}
-        
-</div>
-
-    <div>
-         <button class = "update-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-          <button class="cancel-btn" onclick = "deleteBtn('${task.randomId}')">
+        ${
+          task.isEditing
+            ? `<input type="text" id="edit-${task.randomId}" class="edit-input" value="${task.taskContents}"
+               onblur="handleEdit(event, '${task.randomId}')"
+               onkeydown="handleEdit(event, '${task.randomId}')">`
+            : `<div ondblclick="updateBtn('${task.randomId}')">${task.taskContents}</div>`
+        }
+      </div>
+      <div>
+        <button class="update-btn" onclick="updateBtn('${task.randomId}')">
+          ${task.isEditing 
+            ? '<i class="fa-solid fa-check"></i>' 
+            : '<i class="fa-solid fa-pen-to-square"></i>' 
+          }
+        </button>
+        <button class="cancel-btn" onclick="deleteBtn('${task.randomId}')">
           <i class="fa-solid fa-x"></i>
         </button>
-        </div>
-         
-  </div>
- 
-</div>
-
-
-
+      </div>
+    </div>
 
   
    
