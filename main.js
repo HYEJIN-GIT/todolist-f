@@ -163,14 +163,18 @@ resultRender()
 
 //전체 삭제 버튼
 
-document.getElementById('all-del').addEventListener("click",()=>{
+document.getElementById('all-del').addEventListener("click", () => {
+ 
+  const confirmation = confirm('정말 삭제하시겠습니까?');
 
-alert('정말 삭제하시겠습니까?')
-taskList = [];
-resultRender();
-buttonArea.style.display = "none";
 
-})
+  if (confirmation) {
+    taskList = [];  
+    resultRender(); 
+    buttonArea.style.display = "none"; 
+  }
+});
+
 
 //전체 선택버튼
 
@@ -218,7 +222,7 @@ const saveEditedTask = (randomId, newText) => {
       task.isEditing = false;
     }
   });
-  alert('정말 변경 하시겠습니까?')
+ 
   resultRender()
 };
 
@@ -233,6 +237,7 @@ const cancelEdit = (randomId) => {
 };
 
 
+//경고창
 
 
 
