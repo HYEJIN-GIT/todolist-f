@@ -18,42 +18,44 @@ const dateRender = () =>{
 
 dateRender()
 
-//목록 버튼 보이게 하기
-let buttonArea = document.getElementById("btn-area")
+// 목록 버튼 보이게 하기
+const buttonArea = document.getElementById('btn-area');
+const openInAll = () => {
+  buttonArea.style.display = buttonArea.style.display === 'block' ? 'none' : 'block';
+};
 
-const openInAll = () =>{
- 
-  
-  if (buttonArea.style.display === "block") {
-    buttonArea.style.display = "none";
-  } else {
-    buttonArea.style.display = "block";
-  }
-}
+// daily 버튼 보여주기
+const taskView = document.getElementById('input-none');
+const openInput = () => {
+  taskView.style.display = taskView.style.display === 'inline' ? 'none' : 'inline';
+};
 
-//daily 버튼 보여주기
-let taskView = document.getElementById('input-none')
-const openInput = ()=>{
-  if (taskView.style.display === "inline") {
-    taskView.style.display = "none";
-  } else {
-    taskView.style.display = "inline";
-  }
-}
 
 //input에 있는 내용 화면에 보여주기
 let InputValue = document.getElementById('input-value');
 let submitBtn = document.getElementById('plus-btn')
 let taskList = []
+
+
+//경고창
+
+const warn = (message,callback) => {
+  const confirmation = confirm(message);
+  callback(confirmation);//콜백 호출하기 (true/false)
+};
+
+
 //enter시 할일 표시
 InputValue.addEventListener('keydown',function(event){
   if(event.keyCode === 13)
   { 
-    if(InputValue.value =="")
-      {alert('내용을 입력하세요')
+    if(InputValue.value.trim() === '')
+      {   
+        warn('내용을 입력하세요.', () => {});
+      
         return
       }
-      submitContents(event)
+      submitContents()
       InputValue.value = ""
     }})
 
@@ -70,14 +72,11 @@ function submitContents(){
       isEditing: false
   }
   taskList.push(tasks)
-  console.log(taskList)
   resultRender()
 }
 
 const  resultRender = () =>{
   let todoHTML = taskList.map((task)=>`
-  
-  
   
   <div id="inputs">
 
@@ -164,22 +163,29 @@ resultRender()
 //전체 삭제 버튼
 
 document.getElementById('all-del').addEventListener("click", () => {
- 
-  const confirmation = confirm('정말 삭제하시겠습니까?');
 
 
-  if (confirmation) {
-    taskList = [];  
-    resultRender(); 
-    buttonArea.style.display = "none"; 
+  if (taskList.length === 0) {
+    return; 
   }
+
+
+  warn('정말 삭제하시겠습니까?', (confirmation) => {
+    if (confirmation) {
+      taskList = [];  
+      resultRender(); 
+      buttonArea.style.display = "none"; 
+    }
+  });
 });
 
 
 //전체 선택버튼
 
 document.getElementById('all-check').addEventListener('click',()=>{
-
+  if (taskList.length === 0) {
+    return; 
+  }
 taskList.forEach(task => checkBtn(task.randomId))
 buttonArea.style.display = "none";
 
@@ -203,7 +209,7 @@ resultRender()
 };
 
 
-// 입력 필드 이벤트 핸들러 (Enter/ESC/blur 처리)
+// 입력 필드 이벤트 
 const handleEdit = (event, randomId) => {
   const inputElement = event.target;
   
@@ -218,7 +224,7 @@ const handleEdit = (event, randomId) => {
 const saveEditedTask = (randomId, newText) => {
   taskList.forEach(task => {
     if (task.randomId === randomId) {
-      task.taskContents = newText || task.taskContents; // 빈 값이면 기존 내용 유지
+      task.taskContents = newText || task.taskContents; 
       task.isEditing = false;
     }
   });
@@ -226,7 +232,7 @@ const saveEditedTask = (randomId, newText) => {
   resultRender()
 };
 
-// 수정 취소 (ESC 키)
+// 수정 취소 
 const cancelEdit = (randomId) => {
   taskList.forEach(task => {
     if (task.randomId === randomId) {
@@ -236,8 +242,6 @@ const cancelEdit = (randomId) => {
   resultRender()
 };
 
-
-//경고창
 
 
 
