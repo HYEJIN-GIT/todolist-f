@@ -181,6 +181,59 @@ buttonArea.style.display = "none";
 
 })
 
+//update 함수
+
+const updateBtn = (randomId) => {
+  taskList.forEach(task => {
+    if (task.randomId === randomId) {
+      task.isEditing = true;
+    }
+  });
+resultRender()
+
+
+  // 자동 포커스 설정
+  setTimeout(() => {
+    document.querySelector(`#edit-${randomId}`).focus();
+  }, 0);
+};
+
+
+// 입력 필드 이벤트 핸들러 (Enter/ESC/blur 처리)
+const handleEdit = (event, randomId) => {
+  const inputElement = event.target;
+  
+  if (event.key === "Enter" || event.type === "blur") {
+    saveEditedTask(randomId, inputElement.value.trim());
+  } else if (event.key === "Escape") {
+    cancelEdit(randomId);
+  }
+};
+
+// 수정된 내용 저장
+const saveEditedTask = (randomId, newText) => {
+  taskList.forEach(task => {
+    if (task.randomId === randomId) {
+      task.taskContents = newText || task.taskContents; // 빈 값이면 기존 내용 유지
+      task.isEditing = false;
+    }
+  });
+  alert('정말 변경 하시겠습니까?')
+  resultRender()
+};
+
+// 수정 취소 (ESC 키)
+const cancelEdit = (randomId) => {
+  taskList.forEach(task => {
+    if (task.randomId === randomId) {
+      task.isEditing = false;
+    }
+  });
+  resultRender()
+};
+
+
+
 
 
 // ID 생성 함수
