@@ -100,7 +100,10 @@ const  resultRender = () =>{
           }
         </button>
         <button class="cancel-btn" onclick="deleteBtn('${task.randomId}')">
-          <i class="fa-solid fa-x"></i>
+        ${task.isEditing
+          ?'<i class="fa-solid fa-xmark"></i>' :'<i class="fa-solid fa-trash"></i>'
+        }
+         
         </button>
       </div>
     </div>

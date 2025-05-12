@@ -28,7 +28,7 @@ body{
 
 .container{
    
- 
+
 }
 
 h1{
@@ -61,7 +61,7 @@ margin-top: 40px;
     display: flex;
     margin-left: 50px;
     font-size: 15px;
-    background-color: rgb(235, 235, 235);
+    background-color: #d7e9f7;
     width: 150px;
     justify-content: center;
     align-items: center;
@@ -120,7 +120,7 @@ margin-top: 40px;
     border: none;
     border-radius: 10px;
     padding: 2px;
-    background-color: rgb(241, 241, 241);
+    background-color: #f1f6fb;
     width: 80px;
     position: fixed;
     margin-top: 5px;
@@ -172,13 +172,14 @@ margin-top: 40px;
 
 
 #input-value{
-    background-color: rgb(244, 244, 244);
+   
     border: none;
     width: 100%;
     text-align: center;
    font-family: 'PyeongChang-Regular.otf';
    font-size: 14px;
-   background-color: rgb(206, 223, 237);
+   background-color: white;
+   color: rgb(70, 90, 140);
 }
 
 .fa-arrow-up{
@@ -204,10 +205,10 @@ margin-top: 40px;
     color: rgb(103, 99, 99);
     position: relative;
     left: 2px;
-    background-color: rgb(227, 226, 226);}
-
+    background-color: #dbeaf9;
+}
 #plus-btn:hover{
-    color: gray;
+    background-color: #dbeaf9;
 }
 
 #plus-btn:active
@@ -241,7 +242,7 @@ margin-top: 40px;
     justify-content: space-between;
     margin: 10px 100px;
     padding: 10px;
-    border-bottom: 1px solid rgb(169, 165, 165);  
+    border-bottom: 1px solid #b8cce0;  
 }
 
 /* 완료시 줄긋기 */
@@ -275,13 +276,15 @@ margin-top: 40px;
   /* update  버튼 */
 
   .update-btn{
-    background-color: rgb(206, 223, 237);
+    background-color: transparent;
+  color: rgb(80, 100, 150);
     border: none;
 
   }
   /* delete  버튼 */
   .cancel-btn{
-    background-color: rgb(206, 223, 237);
+    background-color: transparent;
+    color: rgb(80, 100, 150);
     border: none;
   }
 
@@ -297,11 +300,16 @@ margin-top: 50px;
 
 
 
-.update-btn:hover{
-    color: gray;
-}
+.update-btn:hover,
 .update-btn:active{
     color:black
 }
 
 
+.main-bg {
+    background-color: #e8f0fa; /* 연한 푸른빛 배경 */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+  }
