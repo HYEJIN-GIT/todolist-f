@@ -260,3 +260,10 @@ const restSet = () => {
   const left = taskList.filter(task => !task.isComplete).length;
   document.querySelector('.todo-rest').innerHTML = `${left} thing left`;
 }
+
+
+//다크모드 변경
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
