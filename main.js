@@ -40,6 +40,7 @@ let taskList = []
 //경고창
 
 const warn = (message,callback) => {
+  
   const confirmation = confirm(message);
   callback(confirmation);//콜백 호출하기 (true/false)
 };
@@ -126,6 +127,7 @@ document.addEventListener('mouseup', function(e) {
   if (!container.contains(e.target)) {
     buttonArea.style.display = 'none';
   }
+  InputValue.value=""
 });
 
 
@@ -137,6 +139,7 @@ document.addEventListener('mouseup', function(e) {
   if (!container.contains(e.target)) {
     taskView.style.display = 'none';
   }
+   InputValue.value=""
 });
 
 
@@ -190,6 +193,13 @@ document.getElementById('all-check').addEventListener('click',()=>{
     return; 
   }
 taskList.forEach(task => checkBtn(task.randomId))
+
+const allCompleted = taskList.every(task=> task.isComplete)
+
+if(allCompleted){
+  showCompleted("모두 완료되었습니다!")
+}
+
 buttonArea.style.display = "none";
 
 })
@@ -266,4 +276,11 @@ const restSet = () => {
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
+}
+
+function showCompleted (message){
+  setTimeout(() => {
+    alert(message)
+  }, 500);
+ 
 }

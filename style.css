@@ -80,6 +80,7 @@ margin-top: 40px;
     color: rgb(106, 128, 179);
     border: none;
     background-color: rgb(191, 218, 241);
+   
 }
 
 .fa-plus{
@@ -194,6 +195,7 @@ margin-top: 40px;
 /* 버튼이벤트 */
 #input-none{
     display: none;
+ 
 }
 #plus-btn{
     border-radius: 100px;
@@ -266,6 +268,7 @@ margin-top: 40px;
     position: relative;
     right: 10px;
     bottom: 5px;
+ 
   }
 
   .check-todo{
@@ -402,3 +405,105 @@ body.dark-mode #plus-btn {
     color: #f0f0f0;
 }
 
+
+
+@media screen and (max-width:48rem){
+
+    .daily-make{
+        font-size: 8px;
+      
+        width: 80px;
+        height: 30px;
+      
+    }
+    #daily-btn{
+        font-size: 8px;
+        width: 15px;
+        border-radius: 50px;
+       
+    
+    }
+    .fa-plus{
+        position: relative;
+        top: 2px;
+        right: 2px;
+      
+    }
+    .todo-bottom {
+        font-size: 8px;
+        margin-left: 15px;
+    }
+
+    
+#now-date{
+    font-family: 'PyeongChang-Regular.otf';
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    font-size: 8px;
+}
+
+.fa-ellipsis{
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 60px;
+    font-size: 15px;  
+    position: relative;
+   
+}
+
+.all-button div{
+    
+    font-size: 8px;
+    height: 20px;
+}
+.all-button p{
+   
+    font-size: 8px;
+}
+#btn-area{
+
+    width: 50px;
+    position: fixed;
+    
+ }
+
+ #input-value{
+
+ 
+font-size: 8px;
+margin-bottom: 10px;
+
+ }
+
+ .circle{
+  
+   width: 15px;
+   height: 15px;
+}
+
+#plus-btn{
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;}
+.fa-arrow-up{
+    font-size: 10px;
+    top: 2px;
+}
+
+.complete{
+    position: relative;
+    right: 11.5px;
+    bottom: 6.5px;
+    width: 8px;
+    height: 8px;
+}
+
+#inputs{
+    font-size: 10px;
+}
+  
+
+
+}
