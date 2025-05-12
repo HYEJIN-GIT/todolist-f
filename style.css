@@ -206,6 +206,7 @@ margin-top: 40px;
     position: relative;
     left: 2px;
     background-color: #dbeaf9;
+    margin-left: 10px;
 }
 #plus-btn:hover{
     background-color: #dbeaf9;
@@ -334,7 +335,10 @@ margin-top: 40px;
    
 }
 
-
+/* 공통 전환 효과 */
+body, .main-bg, .daily-make, .all-button, input, button {
+    transition: all 0.4s ease;
+  }
 /* 다크모드 전체 배경 및 텍스트 */
 body.dark-mode {
     background-color: #1e1e1e;
@@ -361,16 +365,24 @@ body.dark-mode .complete {
     background-color: #ccc;
 }
 
-body.dark-mode .daily-make,
-body.dark-mode .todo-rest {
+body.dark-mode .daily-make{
     background-color: #3a3a3a;
     color: #ddd;
 }
 
-body.dark-mode .dark {
-    background-color: #444;
+body.dark-mode .dark,body.dark-mode .todo-rest {
+     background-color: #2c2c2c;
     color: #e0e0e0;
 }
+body.dark-mode .dark:hover{
+    background-color: #575656;
+}
+
+body.dark-mode .dark:active{
+    background-color: #868383;
+}
+
+
 
 body.dark-mode .all-button {
     background-color: #2f2f2f;
@@ -379,3 +391,14 @@ body.dark-mode .all-button {
 body.dark-mode .all-button div:hover {
     background-color: #444;
 }
+
+body.dark-mode #daily-btn {
+    background-color: #575555;
+    color: #f0f0f0;
+}
+
+body.dark-mode #plus-btn {
+    background-color: #575555;
+    color: #f0f0f0;
+}
+
