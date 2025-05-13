@@ -74,6 +74,7 @@ function submitContents(){
   }
   taskList.push(tasks)
   resultRender()
+  showToast("할 일이 추가되었습니다!");
 }
 
 const  resultRender = () =>{
@@ -155,6 +156,7 @@ if(task.randomId === randomId){
 
 })
 resultRender()
+
 }
 
 
@@ -163,7 +165,7 @@ resultRender()
 const deleteBtn = (randomId) =>{
 taskList = taskList.filter(task => task.randomId !== randomId)
 resultRender()
-
+showToast("삭제되었습니다!");
 }
 
 //전체 삭제 버튼
@@ -183,6 +185,7 @@ document.getElementById('all-del').addEventListener("click", () => {
       buttonArea.style.display = "none"; 
     }
   });
+  showToast("모든 할 일을 삭제하였습니다!");
 });
 
 
@@ -197,7 +200,7 @@ taskList.forEach(task => checkBtn(task.randomId))
 const allCompleted = taskList.every(task=> task.isComplete)
 
 if(allCompleted){
-  showCompleted("모두 완료되었습니다!")
+  showToast("모든 할 일이 완료되었습니다!");
 }
 
 buttonArea.style.display = "none";
@@ -243,16 +246,19 @@ const saveEditedTask = (randomId, newText) => {
   });
  
   resultRender()
+  showToast("수정이 완료되었습니다.");
 };
 
 // 수정 취소 
 const cancelEdit = (randomId) => {
+
   taskList.forEach(task => {
     if (task.randomId === randomId) {
       task.isEditing = false;
     }
   });
   resultRender()
+ 
 };
 
 
@@ -278,9 +284,16 @@ function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
 
-function showCompleted (message){
-  setTimeout(() => {
-    alert(message)
-  }, 500);
- 
+
+
+//토스트 메세지 보여주기
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  // 2초 뒤 사라지게 설정
+  toast.hideTimeout = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
 }

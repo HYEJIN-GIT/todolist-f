@@ -116,6 +116,8 @@ margin-top: 40px;
 .fa-ellipsis:active{
     color:rgb(96, 115, 158);
 }
+
+
 .all-button{
     display: none;
     border: none;
@@ -246,12 +248,14 @@ margin-top: 40px;
     margin: 10px 100px;
     padding: 10px;
     border-bottom: 1px solid #b8cce0;  
+    animation: slideIn 0.3s ease-out;
 }
 
 /* 완료시 줄긋기 */
 
 .check-line{
     text-decoration: line-through;
+    opacity: 0.6;
 }
 /* 완료버튼 */
 .complete{
@@ -273,6 +277,7 @@ margin-top: 40px;
 
   .check-todo{
     display: flex;
+   
     
 }
 
@@ -407,6 +412,29 @@ body.dark-mode #plus-btn {
 
 
 
+/* 기본 토스트 스타일 */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 35%;
+    background-color: #9da8bc;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+  
+  /* 보여줄 때 */
+  .toast.show {
+    opacity: 1;
+
+  }
+  
+
+
 @media screen and (max-width:48rem){
 
     .daily-make{
@@ -507,3 +535,21 @@ margin-bottom: 10px;
 
 
 }
+
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+ @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+ 
