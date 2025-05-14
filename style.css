@@ -116,8 +116,6 @@ margin-top: 40px;
 .fa-ellipsis:active{
     color:rgb(96, 115, 158);
 }
-
-
 .all-button{
     display: none;
     border: none;
@@ -417,8 +415,8 @@ body.dark-mode #plus-btn {
     position: fixed;
     bottom: 30px;
     left: 35%;
-    background-color: #9da8bc;
-    color: #fff;
+     background-color: rgb(206, 223, 237);
+     color: rgb(123, 138, 174);
     padding: 12px 20px;
     border-radius: 8px;
     font-size: 14px;

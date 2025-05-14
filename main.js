@@ -1,4 +1,6 @@
 
+
+
 // 날짜데이터 표시하기
 
 const dateRender = () =>{
@@ -12,7 +14,7 @@ const dateRender = () =>{
 
   }
   
-  let dateContents = `<div id = "now-date" >${dateList.year} / ${dateList.month} / ${dateList.day}</div>`
+  let dateContents = `<div id = "now-date" >🗓️  ${dateList.year} / ${dateList.month} / ${dateList.day}</div>`
   document.getElementById('date-display').innerHTML = dateContents
 }
 
@@ -78,6 +80,14 @@ function submitContents(){
 }
 
 const  resultRender = () =>{
+
+  taskList.sort((a, b) => {
+    if (a.isComplete === b.isComplete) {
+      return 0;
+    }
+    return a.isComplete ? 1 : -1;  
+  });
+  
   let todoHTML = taskList.map((task)=>`
   
   <div id="inputs">
