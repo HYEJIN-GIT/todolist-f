@@ -302,6 +302,14 @@ function toggleDarkMode() {
     localStorage.setItem("darkMode", "disabled");
   }
 }
+window.onload = () => {
+  dateRender();
+
+  const darkMode = localStorage.getItem("darkMode");
+  if (darkMode === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+};
 
 
 //토스트 메세지 보여주기
@@ -316,24 +324,4 @@ function showToast(message) {
   }, 2000);
 }
 
-function saveTasks() {
-  localStorage.setItem('taskList', JSON.stringify(taskList));
-}
 
-//기존 내용 불러오기
-function loadTasks() {
-  const data = localStorage.getItem('taskList');
-  if (data) {
-    taskList = JSON.parse(data);
-    resultRender();
-  }
-
-
-
-window.onload = () => {
-  dateRender();
-  loadTasks();  // 시작 시 불러오기
-  const darkMode = localStorage.getItem("darkMode");
-  if (darkMode === "enabled") {
-    document.body.classList.add("dark-mode");}
-}};
