@@ -292,8 +292,12 @@ const restSet = () => {
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
 }
-
 
 
 //토스트 메세지 보여주기
@@ -326,8 +330,11 @@ function loadTasks() {
     resultRender();
   }
 }
-//새로고침 시 재로드
+
 window.onload = () => {
   dateRender();
-  loadTasks();  
+  loadTasks();  // 시작 시 불러오기
+  const darkMode = localStorage.getItem("darkMode");
+  if (darkMode === "enabled") {
+    document.body.classList.add("dark-mode");}
 };
