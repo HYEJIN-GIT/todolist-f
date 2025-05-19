@@ -307,3 +307,27 @@ function showToast(message) {
     toast.classList.remove("show");
   }, 2000);
 }
+
+
+
+
+
+//저장 
+
+function saveTasks() {
+  localStorage.setItem('taskList', JSON.stringify(taskList));
+}
+
+//기존 내용 불러오기
+function loadTasks() {
+  const data = localStorage.getItem('taskList');
+  if (data) {
+    taskList = JSON.parse(data);
+    resultRender();
+  }
+}
+//새로고침 시 재로드
+window.onload = () => {
+  dateRender();
+  loadTasks();  
+};
