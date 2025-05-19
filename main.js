@@ -80,6 +80,7 @@ function submitContents(){
 }
 
 const  resultRender = () =>{
+ 
 
   taskList.sort((a, b) => {
     if (a.isComplete === b.isComplete) {
@@ -205,17 +206,20 @@ document.getElementById('all-check').addEventListener('click',()=>{
   if (taskList.length === 0) {
     return; 
   }
-taskList.forEach(task => checkBtn(task.randomId))
 
-const allCompleted = taskList.every(task=> task.isComplete)
+const allCompleted = taskList.every(task => task.isComplete);
 
-if(allCompleted){
-  showToast("모든 할 일이 완료되었습니다!");
-}
+taskList.forEach(task => {
+  task.isComplete = !allCompleted;
+});
+
+resultRender();
+
+showToast(allCompleted ? "모든 할 일이 취소되었습니다!" : "모든 할 일이 완료되었습니다!");
 
 buttonArea.style.display = "none";
+});
 
-})
 
 //update 함수
 
@@ -312,12 +316,6 @@ function showToast(message) {
   }, 2000);
 }
 
-
-
-
-
-//저장 
-
 function saveTasks() {
   localStorage.setItem('taskList', JSON.stringify(taskList));
 }
@@ -329,7 +327,8 @@ function loadTasks() {
     taskList = JSON.parse(data);
     resultRender();
   }
-}
+
+
 
 window.onload = () => {
   dateRender();
@@ -337,4 +336,4 @@ window.onload = () => {
   const darkMode = localStorage.getItem("darkMode");
   if (darkMode === "enabled") {
     document.body.classList.add("dark-mode");}
-};
+}};
