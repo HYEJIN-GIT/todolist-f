@@ -422,7 +422,7 @@ body.dark-mode #plus-btn {
     font-size: 14px;
     opacity: 0;
     text-align: center;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transition: opacity 0.4s ease
 }
   
   /* 보여줄 때 */
@@ -434,18 +434,26 @@ body.dark-mode #plus-btn {
 
 
 @media screen and (max-width:48rem){
-
+   
+.daily-contents,.fa-heart{
+    position: relative;
+    bottom: 2px;
+}
     .daily-make{
+       position: relative;
+       right: 20px;
         font-size: 8px;
-      
+      text-align: center;
         width: 80px;
-        height: 30px;
+        height: 25px;
       
     }
     #daily-btn{
+        position: relative;
+        bottom:1px;
         font-size: 8px;
         width: 15px;
-        border-radius: 50px;
+        border-radius: 30px;
        
     
     }
@@ -470,13 +478,12 @@ body.dark-mode #plus-btn {
 }
 
 .fa-ellipsis{
+   
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 60px;
     font-size: 15px;  
     position: relative;
-   
+    bottom: 6px;
+    
 }
 
 .all-button div{
@@ -528,9 +535,12 @@ margin-bottom: 10px;
 
 #inputs{
     font-size: 10px;
+    width: 50%;
+    width: 70%;      
+    margin: 10px auto; 
+    padding: 10px;  
 }
   
-
 
 }
 
