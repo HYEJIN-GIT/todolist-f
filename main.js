@@ -105,7 +105,7 @@ const  resultRender = () =>{
             : `<div ondblclick="updateBtn('${task.randomId}')">${task.taskContents}</div>`
         }
       </div>
-      <div>
+      <div class = "update-cancel">
         <button class="update-btn" onclick="updateBtn('${task.randomId}')">
           ${task.isEditing 
             ? '<i class="fa-solid fa-check"></i>' 
