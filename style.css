@@ -550,6 +550,19 @@ margin-bottom: 10px;
     display: flex;
    
 }
+
+/* 토스트알림 */
+.toast {
+  
+    width: auto;
+    font-size: 10px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+   
+}
+
+
+
 }
 
 
